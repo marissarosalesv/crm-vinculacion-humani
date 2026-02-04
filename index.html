@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Humani Mundial | CRM de Vinculación</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__logo">HM</span>
+        <div>
+          <p class="brand__name">Humani Mundial</p>
+          <p class="brand__subtitle">CRM de Vinculación Universitaria</p>
+        </div>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn btn--ghost">Nueva interacción</button>
+        <button class="btn">Registrar oportunidad</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="auth">
+        <div class="auth__intro">
+          <p class="eyebrow">Acceso seguro</p>
+          <h1>Autenticación simple para el equipo de vinculación</h1>
+          <p class="lead">
+            Inicia sesión con usuario y contraseña. El rol define exactamente lo que cada persona
+            puede ver y editar dentro del CRM.
+          </p>
+          <div class="roles">
+            <div class="role-card">
+              <h3>Administrador</h3>
+              <p>Acceso total a convenios, reportes, contactos y configuración.</p>
+            </div>
+            <div class="role-card">
+              <h3>Vinculación</h3>
+              <p>Solo ve y edita sus propios prospectos y actividades asignadas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="login-card">
+          <h2>Ingreso al CRM</h2>
+          <form class="login-form">
+            <label>
+              Usuario
+              <input type="text" placeholder="ej. amora" />
+            </label>
+            <label>
+              Contraseña
+              <input type="password" placeholder="••••••••" />
+            </label>
+            <label>
+              Rol
+              <select>
+                <option>Administrador</option>
+                <option>Vinculación</option>
+              </select>
+            </label>
+            <button class="btn" type="button">Ingresar</button>
+            <p class="login-hint">¿Necesitas acceso? Solicítalo al administrador del área.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Equipo de vinculación · 6-8 personas</p>
+          <h1>Seguimiento claro y humano de relaciones estratégicas</h1>
+          <p class="lead">
+            Un tablero simple para registrar contactos, oportunidades y tareas sin tecnicismos.
+            Todo lo importante está a un vistazo.
+          </p>
+        </div>
+        <div class="hero__status">
+          <div class="status-card">
+            <p class="status-card__label">Interacciones esta semana</p>
+            <p class="status-card__value">26</p>
+            <p class="status-card__hint">+4 vs. semana anterior</p>
+          </div>
+          <div class="status-card">
+            <p class="status-card__label">Convenios en progreso</p>
+            <p class="status-card__value">12</p>
+            <p class="status-card__hint">4 listos para firma</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="kanban">
+        <header class="kanban__header">
+          <div>
+            <p class="eyebrow">Prospectos</p>
+            <h2>Tablero Kanban de vinculación</h2>
+            <p class="lead">Arrastra cada prospecto para actualizar su etapa.</p>
+          </div>
+          <button class="btn btn--ghost">Nuevo prospecto</button>
+        </header>
+        <div class="kanban__board" data-kanban>
+          <div class="kanban__column" data-column="captacion">
+            <div class="kanban__column-header">
+              <h3>Captación</h3>
+              <span class="kanban__count">3</span>
+            </div>
+            <div class="kanban__list" data-list>
+              <article class="kanban__card" draggable="true" data-id="p1" data-followup="2026-03-12">
+                <p class="kanban__title">María Fernanda López</p>
+                <p class="kanban__meta">
+                  Captación · Dueño: Andrea
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 1234 5678</li>
+                  <li><span>Email:</span> mflopez@email.com</li>
+                  <li><span>Programa:</span> Psicología</li>
+                  <li><span>Fuente:</span> Feria vocacional</li>
+                  <li><span>Estatus:</span> Primer contacto</li>
+                  <li><span>Seguimiento:</span> 12 Mar</li>
+                  <li><span>Notas:</span> Prefiere contacto por WhatsApp.</li>
+                </ul>
+              </article>
+              <article class="kanban__card" draggable="true" data-id="p2" data-followup="2026-03-14">
+                <p class="kanban__title">Luis Enrique Torres</p>
+                <p class="kanban__meta">
+                  Captación · Dueño: Sofía
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 9087 6601</li>
+                  <li><span>Email:</span> ltorres@email.com</li>
+                  <li><span>Programa:</span> Administración</li>
+                  <li><span>Fuente:</span> Referido</li>
+                  <li><span>Estatus:</span> Interés alto</li>
+                  <li><span>Seguimiento:</span> 14 Mar</li>
+                  <li><span>Notas:</span> Solicita beca parcial.</li>
+                </ul>
+              </article>
+              <article class="kanban__card" draggable="true" data-id="p3" data-followup="2026-03-15">
+                <p class="kanban__title">Daniela Ríos</p>
+                <p class="kanban__meta">
+                  Captación · Dueño: Marcos
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 7721 4433</li>
+                  <li><span>Email:</span> drios@email.com</li>
+                  <li><span>Programa:</span> Ingeniería Industrial</li>
+                  <li><span>Fuente:</span> Redes sociales</li>
+                  <li><span>Estatus:</span> Pendiente de llamada</li>
+                  <li><span>Seguimiento:</span> 15 Mar</li>
+                  <li><span>Notas:</span> Disponible por la tarde.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="kanban__column" data-column="contactado">
+            <div class="kanban__column-header">
+              <h3>Contactado</h3>
+              <span class="kanban__count">2</span>
+            </div>
+            <div class="kanban__list" data-list>
+              <article class="kanban__card" draggable="true" data-id="p4" data-followup="2026-03-18">
+                <p class="kanban__title">Carolina Méndez</p>
+                <p class="kanban__meta">
+                  Contactado · Dueño: Javier
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 4477 9012</li>
+                  <li><span>Email:</span> cmendez@email.com</li>
+                  <li><span>Programa:</span> Enfermería</li>
+                  <li><span>Fuente:</span> Evento de salud</li>
+                  <li><span>Estatus:</span> Información enviada</li>
+                  <li><span>Seguimiento:</span> 18 Mar</li>
+                  <li><span>Notas:</span> Espera folleto digital.</li>
+                </ul>
+              </article>
+              <article class="kanban__card" draggable="true" data-id="p5" data-followup="2026-03-19">
+                <p class="kanban__title">Sebastián Ruiz</p>
+                <p class="kanban__meta">
+                  Contactado · Dueño: Andrea
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 3301 2244</li>
+                  <li><span>Email:</span> sruiz@email.com</li>
+                  <li><span>Programa:</span> Derecho</li>
+                  <li><span>Fuente:</span> Open house</li>
+                  <li><span>Estatus:</span> Evaluando plan</li>
+                  <li><span>Seguimiento:</span> 19 Mar</li>
+                  <li><span>Notas:</span> Quiere horarios nocturnos.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="kanban__column" data-column="seguimiento">
+            <div class="kanban__column-header">
+              <h3>Seguimiento</h3>
+              <span class="kanban__count">2</span>
+            </div>
+            <div class="kanban__list" data-list>
+              <article class="kanban__card" draggable="true" data-id="p6" data-followup="2026-03-21">
+                <p class="kanban__title">Paola Sánchez</p>
+                <p class="kanban__meta">
+                  Seguimiento · Dueño: Sofía
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 2290 1188</li>
+                  <li><span>Email:</span> psanchez@email.com</li>
+                  <li><span>Programa:</span> Pedagogía</li>
+                  <li><span>Fuente:</span> Webinar</li>
+                  <li><span>Estatus:</span> En evaluación</li>
+                  <li><span>Seguimiento:</span> 21 Mar</li>
+                  <li><span>Notas:</span> Pendiente de documentos.</li>
+                </ul>
+              </article>
+              <article class="kanban__card" draggable="true" data-id="p7" data-followup="2026-03-22">
+                <p class="kanban__title">Hugo Salgado</p>
+                <p class="kanban__meta">
+                  Seguimiento · Dueño: Marcos
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 6644 8899</li>
+                  <li><span>Email:</span> hsalgado@email.com</li>
+                  <li><span>Programa:</span> Arquitectura</li>
+                  <li><span>Fuente:</span> Recomendación</li>
+                  <li><span>Estatus:</span> En análisis</li>
+                  <li><span>Seguimiento:</span> 22 Mar</li>
+                  <li><span>Notas:</span> Quiere visita al campus.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="kanban__column" data-column="apartado">
+            <div class="kanban__column-header">
+              <h3>Apartado</h3>
+              <span class="kanban__count">1</span>
+            </div>
+            <div class="kanban__list" data-list>
+              <article class="kanban__card" draggable="true" data-id="p8" data-followup="2026-03-25">
+                <p class="kanban__title">Valeria Ortiz</p>
+                <p class="kanban__meta">
+                  Apartado · Dueño: Javier
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 1188 4432</li>
+                  <li><span>Email:</span> vortiz@email.com</li>
+                  <li><span>Programa:</span> Comunicación</li>
+                  <li><span>Fuente:</span> Feria educativa</li>
+                  <li><span>Estatus:</span> Cupo apartado</li>
+                  <li><span>Seguimiento:</span> 25 Mar</li>
+                  <li><span>Notas:</span> Espera confirmación de beca.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="kanban__column" data-column="inscrito">
+            <div class="kanban__column-header">
+              <h3>Inscrito</h3>
+              <span class="kanban__count">1</span>
+            </div>
+            <div class="kanban__list" data-list>
+              <article class="kanban__card" draggable="true" data-id="p9" data-followup="2026-04-02">
+                <p class="kanban__title">Ricardo Molina</p>
+                <p class="kanban__meta">
+                  Inscrito · Dueño: Andrea
+                  <span class="kanban__reminder" data-reminder></span>
+                </p>
+                <ul class="kanban__fields">
+                  <li><span>Teléfono:</span> 55 5511 2200</li>
+                  <li><span>Email:</span> rmolina@email.com</li>
+                  <li><span>Programa:</span> Diseño gráfico</li>
+                  <li><span>Fuente:</span> Ads digitales</li>
+                  <li><span>Estatus:</span> Inscripción completa</li>
+                  <li><span>Seguimiento:</span> 02 Abr</li>
+                  <li><span>Notas:</span> Listo para inducción.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <header class="card__header">
+            <h2>Pipeline de convenios</h2>
+            <button class="btn btn--text">Ver todo</button>
+          </header>
+          <div class="pipeline">
+            <div class="pipeline__column">
+              <h3>Exploración</h3>
+              <ul>
+                <li>Fundación Horizonte</li>
+                <li>Municipio Central</li>
+                <li>Red de Egresados</li>
+              </ul>
+            </div>
+            <div class="pipeline__column">
+              <h3>Propuesta</h3>
+              <ul>
+                <li>Clínica San Miguel</li>
+                <li>Biblioteca Regional</li>
+              </ul>
+            </div>
+            <div class="pipeline__column">
+              <h3>Revisión legal</h3>
+              <ul>
+                <li>Banco Solidario</li>
+              </ul>
+            </div>
+            <div class="pipeline__column">
+              <h3>Firma</h3>
+              <ul>
+                <li>Ministerio de Cultura</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__header">
+            <h2>Tareas prioritarias</h2>
+            <button class="btn btn--text">Asignar</button>
+          </header>
+          <ul class="tasks">
+            <li>
+              <span class="tag tag--urgent">Hoy</span>
+              Llamar a Dra. Mendoza para validar horarios de práctica.
+            </li>
+            <li>
+              <span class="tag">Mañana</span>
+              Enviar minuta de reunión con Fundación Horizonte.
+            </li>
+            <li>
+              <span class="tag">Esta semana</span>
+              Coordinar visita institucional con Municipio Central.
+            </li>
+            <li>
+              <span class="tag">Viernes</span>
+              Solicitar firma digital para convenio con Banco Solidario.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header class="card__header">
+            <h2>Contactos clave</h2>
+            <button class="btn btn--text">Nuevo contacto</button>
+          </header>
+          <div class="contacts">
+            <div>
+              <p class="contact__name">Dra. Laura Mendoza</p>
+              <p class="contact__detail">Clínica San Miguel · Salud</p>
+              <p class="contact__note">Última interacción: 2 días</p>
+            </div>
+            <div>
+              <p class="contact__name">Ing. Roberto Juárez</p>
+              <p class="contact__detail">Ministerio de Cultura · Educación</p>
+              <p class="contact__note">Requiere borrador legal</p>
+            </div>
+            <div>
+              <p class="contact__name">Lic. Ana Prado</p>
+              <p class="contact__detail">Fundación Horizonte · Desarrollo social</p>
+              <p class="contact__note">Lista para reunión presencial</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__header">
+            <h2>Próximas reuniones</h2>
+            <button class="btn btn--text">Programar</button>
+          </header>
+          <ul class="meetings">
+            <li>
+              <span class="tag">Hoy 16:00</span>
+              Sesión con Rectoría · Ajustes de convenio social.
+            </li>
+            <li>
+              <span class="tag">Jue 10:30</span>
+              Visita a Biblioteca Regional · Revisión de espacios.
+            </li>
+            <li>
+              <span class="tag">Mar 09:00</span>
+              Presentación con Red de Egresados · Activación 2024.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header class="card__header">
+            <h2>Resumen por equipo</h2>
+            <button class="btn btn--text">Ver agenda</button>
+          </header>
+          <div class="team">
+            <div class="team__member">
+              <div class="avatar">AM</div>
+              <div>
+                <p class="team__name">Andrea Mora</p>
+                <p class="team__detail">5 cuentas activas · 2 pendientes</p>
+              </div>
+            </div>
+            <div class="team__member">
+              <div class="avatar">JR</div>
+              <div>
+                <p class="team__name">Javier Ruiz</p>
+                <p class="team__detail">3 visitas en agenda</p>
+              </div>
+            </div>
+            <div class="team__member">
+              <div class="avatar">SL</div>
+              <div>
+                <p class="team__name">Sofía López</p>
+                <p class="team__detail">1 convenio por cerrar</p>
+              </div>
+            </div>
+            <div class="team__member">
+              <div class="avatar">MC</div>
+              <div>
+                <p class="team__name">Marcos Cruz</p>
+                <p class="team__detail">2 eventos comunitarios</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script>
+      const kanbanCards = document.querySelectorAll(".kanban__card");
+      const kanbanLists = document.querySelectorAll("[data-list]");
+      const reminderThresholdDays = 3;
+      const today = new Date();
+      const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+      const updateReminders = () => {
+        kanbanCards.forEach((card) => {
+          const reminder = card.querySelector("[data-reminder]");
+          if (!reminder) {
+            return;
+          }
+          const followupDate = card.dataset.followup;
+          if (!followupDate) {
+            reminder.textContent = "";
+            reminder.classList.remove("is-warning", "is-today");
+            return;
+          }
+          const followup = new Date(`${followupDate}T00:00:00`);
+          const diffTime = followup.getTime() - startOfToday.getTime();
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+          reminder.classList.remove("is-warning", "is-today");
+          if (diffDays < 0) {
+            reminder.textContent = "Vencido";
+            reminder.classList.add("is-warning");
+          } else if (diffDays === 0) {
+            reminder.textContent = "Hoy";
+            reminder.classList.add("is-today");
+          } else if (diffDays <= reminderThresholdDays) {
+            reminder.textContent = `Vence en ${diffDays} día${diffDays > 1 ? "s" : ""}`;
+            reminder.classList.add("is-warning");
+          } else {
+            reminder.textContent = "";
+          }
+        });
+      };
+
+      const updateCounts = () => {
+        document.querySelectorAll(".kanban__column").forEach((column) => {
+          const count = column.querySelectorAll(".kanban__card").length;
+          const countEl = column.querySelector(".kanban__count");
+          if (countEl) {
+            countEl.textContent = count;
+          }
+        });
+      };
+
+      kanbanCards.forEach((card) => {
+        card.addEventListener("dragstart", (event) => {
+          event.dataTransfer.setData("text/plain", card.dataset.id);
+          event.dataTransfer.effectAllowed = "move";
+          card.classList.add("is-dragging");
+        });
+
+        card.addEventListener("dragend", () => {
+          card.classList.remove("is-dragging");
+        });
+      });
+
+      kanbanLists.forEach((list) => {
+        list.addEventListener("dragover", (event) => {
+          event.preventDefault();
+          list.classList.add("is-over");
+          event.dataTransfer.dropEffect = "move";
+        });
+
+        list.addEventListener("dragleave", () => {
+          list.classList.remove("is-over");
+        });
+
+        list.addEventListener("drop", (event) => {
+          event.preventDefault();
+          list.classList.remove("is-over");
+          const id = event.dataTransfer.getData("text/plain");
+          const card = document.querySelector(`[data-id="${id}"]`);
+          if (card && list !== card.parentElement) {
+            list.appendChild(card);
+            updateCounts();
+          }
+        });
+      });
+
+      updateReminders();
+    </script>
+  </body>
+</html>
