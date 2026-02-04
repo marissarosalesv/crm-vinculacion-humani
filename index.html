@@ -3,58 +3,62 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CRM Humani Mundial | Calidad</title>
+    <title>CRM Vinculación | Humani Mundial</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        /* COLORES OFICIALES UNIMUNDIAL.EDU.MX */
         :root {
-            --azul: #002b54;   /* Azul oficial Humani */
-            --dorado: #b38e5d; /* Dorado oficial Humani */
-            --gris-fondo: #f8f9fa;
+            --humani-azul: #002b54;   /* Azul Marino oficial */
+            --humani-dorado: #b38e5d; /* Dorado Ocre oficial */
+            --fondo: #f4f4f4;
+            --blanco: #ffffff;
         }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--gris-fondo); display: flex; height: 100vh; overflow: hidden; }
-        
-        /* Sidebar Profesional */
-        aside { width: 260px; background: var(--azul); color: white; display: flex; flex-direction: column; }
-        .brand { padding: 30px 20px; text-align: center; background: rgba(0,0,0,0.1); }
-        .logo { background: var(--dorado); color: var(--azul); width: 50px; height: 50px; line-height: 50px; border-radius: 50%; font-weight: bold; margin: 0 auto 10px; font-size: 20px; }
-        
-        nav { padding: 20px; flex: 1; }
-        .nav-link { display: flex; align-items: center; gap: 12px; color: #d1d1d1; text-decoration: none; padding: 12px; border-radius: 8px; margin-bottom: 10px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { background: var(--dorado); color: var(--azul); font-weight: bold; }
 
-        /* Contenido Central */
-        main { flex: 1; display: flex; flex-direction: column; }
-        header { background: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--dorado); }
-        h1 { margin: 0; color: var(--azul); font-size: 24px; }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--fondo); display: flex; height: 100vh; overflow: hidden; }
+
+        /* MENU LATERAL */
+        aside { width: 260px; background: var(--humani-azul); color: white; display: flex; flex-direction: column; box-shadow: 2px 0 10px rgba(0,0,0,0.1); }
+        .brand { padding: 30px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); }
+        .logo-c { background: var(--humani-dorado); color: var(--humani-azul); width: 45px; height: 45px; line-height: 45px; border-radius: 50%; font-weight: bold; margin: 0 auto 10px; font-size: 18px; }
         
-        /* Tablero Kanban */
-        .board { flex: 1; padding: 20px; display: flex; gap: 20px; overflow-x: auto; }
-        .column { background: #e9ecef; min-width: 280px; border-radius: 12px; display: flex; flex-direction: column; max-height: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .col-header { padding: 15px; border-bottom: 3px solid var(--dorado); display: flex; justify-content: space-between; align-items: center; }
-        .col-header h3 { margin: 0; font-size: 16px; color: var(--azul); }
+        nav { flex: 1; padding: 20px; }
+        .nav-link { display: flex; align-items: center; gap: 12px; color: #d1d1d1; text-decoration: none; padding: 12px; border-radius: 6px; margin-bottom: 8px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { background: var(--humani-dorado); color: var(--humani-azul); font-weight: bold; }
+
+        /* PANEL CENTRAL */
+        main { flex: 1; display: flex; flex-direction: column; }
+        header { background: var(--blanco); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--humani-dorado); }
+        h1 { margin: 0; color: var(--humani-azul); font-size: 22px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* TABLERO KANBAN */
+        .board { flex: 1; padding: 20px; display: flex; gap: 20px; overflow-x: auto; align-items: flex-start; }
+        .column { background: #e2e8f0; min-width: 280px; border-radius: 12px; display: flex; flex-direction: column; max-height: 95%; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .col-header { padding: 15px; display: flex; justify-content: space-between; align-items: center; color: var(--humani-azul); font-weight: bold; }
         
         .list { padding: 10px; flex: 1; overflow-y: auto; min-height: 150px; }
         
-        /* Tarjetas de Alumnos */
-        .card { background: white; padding: 15px; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 5px solid var(--dorado); cursor: grab; }
-        .card strong { display: block; color: var(--azul); margin-bottom: 5px; }
-        .prog { background: #f1f3f5; font-size: 11px; padding: 3px 8px; border-radius: 5px; color: #495057; }
+        /* TARJETAS */
+        .card { background: var(--blanco); padding: 15px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 5px solid var(--humani-dorado); cursor: grab; }
+        .card:active { cursor: grabbing; }
+        .card strong { display: block; color: var(--humani-azul); margin-bottom: 5px; }
+        .prog-tag { font-size: 11px; background: #f0f0f0; padding: 2px 8px; border-radius: 4px; color: #666; font-weight: bold; }
 
-        .btn { padding: 12px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; background: var(--azul); color: white; display: flex; align-items: center; gap: 8px; }
-        .btn:hover { background: #003a75; opacity: 0.9; }
+        /* BOTON */
+        .btn-add { background: var(--humani-azul); color: white; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+        .btn-add:hover { background: #003a75; }
     </style>
 </head>
 <body>
 
     <aside>
         <div class="brand">
-            <div class="logo">HM</div>
-            <strong>HUMANI MUNDIAL</strong>
-            <div style="font-size: 11px; opacity: 0.7; margin-top: 5px;">Coordinación de Calidad</div>
+            <div class="logo-c">HM</div>
+            <div style="font-weight: bold; font-size: 14px;">HUMANI MUNDIAL</div>
+            <div style="font-size: 10px; opacity: 0.7; margin-top: 4px;">CALIDAD E INNOVACIÓN</div>
         </div>
         <nav>
-            <a href="#" class="nav-link active"><i data-lucide="layout"></i> Dashboard</a>
-            <a href="#" class="nav-link"><i data-lucide="file-check"></i> Convenios FIMPES</a>
+            <a href="#" class="nav-link active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+            <a href="#" class="nav-link"><i data-lucide="file-text"></i> Convenios FIMPES</a>
             <a href="#" class="nav-link"><i data-lucide="users"></i> Prospectos</a>
         </nav>
     </aside>
@@ -62,31 +66,35 @@
     <main>
         <header>
             <div>
-                <h1>Vinculación Universitaria</h1>
-                <p style="margin: 0; font-size: 12px; color: var(--dorado); font-weight: bold;">Estatus de Acreditación FIMPES</p>
+                <h1>Vinculación Humani</h1>
+                <p style="margin:0; font-size:11px; color: var(--humani-dorado); font-weight: bold;">SER PARA TRASCENDER</p>
             </div>
-            <button class="btn" onclick="agregarNuevo()">
-                <i data-lucide="plus"></i> Nuevo Prospecto
+            <button class="btn-add" onclick="agregar()">
+                <i data-lucide="plus-circle"></i> Nuevo Prospecto
             </button>
         </header>
 
         <div class="board">
             <div class="column">
-                <div class="col-header"><h3>Captación</h3> <i data-lucide="users"></i></div>
-                <div class="list" id="captacion" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <div class="card" draggable="true" ondragstart="drag(event)" id="a1">
+                <div class="col-header">Captación <i data-lucide="target"></i></div>
+                <div class="list" id="col1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="card" draggable="true" ondragstart="drag(event)" id="card-1">
                         <strong>María Fernanda López</strong>
-                        <span class="prog">Psicología</span>
+                        <span class="prog-tag">Psicología</span>
                     </div>
                 </div>
             </div>
             <div class="column">
-                <div class="col-header"><h3>Contactado</h3> <i data-lucide="phone"></i></div>
-                <div class="list" id="contactado" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="col-header">Contactado <i data-lucide="phone"></i></div>
+                <div class="list" id="col2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
             <div class="column">
-                <div class="col-header"><h3>Inscrito</h3> <i data-lucide="check"></i></div>
-                <div class="list" id="inscrito" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="col-header">Seguimiento <i data-lucide="clock"></i></div>
+                <div class="list" id="col3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="column">
+                <div class="col-header">Inscrito <i data-lucide="check-circle"></i></div>
+                <div class="list" id="col4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
         </div>
     </main>
@@ -94,13 +102,28 @@
     <script>
         lucide.createIcons();
 
-        function agregarNuevo() {
-            const nombre = prompt("Nombre completo del alumno:");
-            const carrera = prompt("Programa (Psicología, Derecho, etc):");
-            if (nombre && carrera) {
-                const id = "ID" + Date.now();
-                const html = `<div class="card" draggable="true" ondragstart="drag(event)" id="${id}">
-                    <strong>${nombre}</strong>
-                    <span class="prog">${carrera}</span>
+        function agregar() {
+            const n = prompt("Nombre del alumno:");
+            const c = prompt("Carrera (ej. Psicología):");
+            if (n && c) {
+                const id = "c-" + Date.now();
+                const card = `<div class="card" draggable="true" ondragstart="drag(event)" id="${id}">
+                    <strong>${n}</strong>
+                    <span class="prog-tag">${c}</span>
                 </div>`;
-                document
+                document.getElementById('col1').insertAdjacentHTML('beforeend', card);
+            }
+        }
+
+        function allowDrop(ev) { ev.preventDefault(); }
+        function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+        function drop(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            let target = ev.target;
+            if (!target.classList.contains('list')) target = target.closest('.list');
+            if (target) target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+</html>
