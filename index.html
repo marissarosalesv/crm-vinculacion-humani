@@ -4,83 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Humani Mundial | CRM Vinculación</title>
-    <style>
-        /* Aquí está todo el diseño profesional */
-        :root {
-            --azul: #0b2a4a;
-            --dorado: #c9b37e;
-            --fondo: #f0f2f5;
-        }
-        body { margin: 0; font-family: sans-serif; background: var(--fondo); display: flex; height: 100vh; }
-        
-        /* Menú Lateral */
-        aside { width: 250px; background: var(--azul); color: white; padding: 20px; display: flex; flex-direction: column; }
-        .logo { background: var(--dorado); color: var(--azul); padding: 10px; border-radius: 8px; font-weight: bold; text-align: center; margin-bottom: 20px; }
-        
-        /* Área de trabajo */
-        main { flex: 1; padding: 30px; overflow-y: auto; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-        
-        /* Tablero Horizontal */
-        .kanban { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; }
-        .column { background: #e5e7eb; min-width: 280px; border-radius: 12px; padding: 15px; height: fit-content; }
-        .column h3 { margin-top: 0; color: var(--azul); font-size: 16px; }
-        
-        /* Tarjetas */
-        .card { background: white; padding: 15px; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 5px solid var(--dorado); }
-        .card strong { display: block; margin-bottom: 5px; }
-        .tag { background: #eee; font-size: 11px; padding: 2px 6px; border-radius: 4px; }
-        
-        /* Botones */
-        .btn { padding: 10px 15px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
-        .btn-pri { background: var(--azul); color: white; }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <aside>
-        <div class="logo">HM</div>
-        <nav>
-            <p><strong>CRM Vinculación</strong></p>
-            <p>Dashboard</p>
-            <p>Convenios FIMPES</p>
-        </nav>
-    </aside>
-    <main>
-        <div class="header">
-            <div>
-                <h1>Vinculación Humani</h1>
-                <p>Coordinación de Calidad</p>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-box">HM</div>
+                <span>Humani Mundial</span>
             </div>
-            <button class="btn btn-pri">Nuevo Prospecto</button>
-        </div>
+            <nav class="menu">
+                <a href="#" class="active"><i data-lucide="layout"></i> Tablero Kanban</a>
+                <a href="#"><i data-lucide="file-check"></i> Convenios FIMPES</a>
+                <a href="#"><i data-lucide="users"></i> Contactos Clave</a>
+                <a href="#"><i data-lucide="calendar"></i> Agenda</a>
+            </nav>
+        </aside>
 
-        <div class="kanban">
-            <div class="column">
-                <h3>Captación</h3>
-                <div class="card">
-                    <strong>María Fernanda López</strong>
-                    <span class="tag">Psicología</span>
+        <main class="content">
+            <header class="header">
+                <div class="titles">
+                    <h1>Vinculación Humani</h1>
+                    <p>Seguimiento de relaciones estratégicas</p>
                 </div>
-                <div class="card">
-                    <strong>Luis Enrique Torres</strong>
-                    <span class="tag">Administración</span>
+                <div class="actions">
+                    <button class="btn-sec">Nueva Interacción</button>
+                    <button class="btn-pri">Registrar Oportunidad</button>
                 </div>
-            </div>
-            <div class="column">
-                <h3>Contactado</h3>
-                <div class="card">
-                    <strong>Carolina Méndez</strong>
-                    <span class="tag">Enfermería</span>
+            </header>
+
+            <div class="kanban">
+                <div class="column">
+                    <div class="col-header"><h3>Captación</h3> <span class="count">3</span></div>
+                    <div class="list" id="captacion">
+                        <div class="card" draggable="true">
+                            <strong>María Fernanda López</strong>
+                            <span class="tag">Psicología</span>
+                            <p class="owner">Dueño: Andrea</p>
+                        </div>
+                        <div class="card" draggable="true">
+                            <strong>Luis Enrique Torres</strong>
+                            <span class="tag">Administración</span>
+                            <p class="owner">Dueño: Sofía</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="column">
-                <h3>Seguimiento</h3>
-                <div class="card">
-                    <strong>Paola Sánchez</strong>
-                    <span class="tag">Pedagogía</span>
+
+                <div class="column">
+                    <div class="col-header"><h3>Contactado</h3> <span class="count">2</span></div>
+                    <div class="list" id="contactado">
+                        <div class="card" draggable="true">
+                            <strong>Carolina Méndez</strong>
+                            <span class="tag">Enfermería</span>
+                            <p class="owner">Dueño: Javier</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </main>
+
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
