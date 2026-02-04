@@ -1,91 +1,71 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Humani Mundial | CRM de Vinculación</title>
-  <link rel="stylesheet" href="Update styles.css" />
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Humani Mundial | CRM Vinculación</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <div class="dashboard-container">
-    <aside class="sidebar">
-      <div class="brand">
-        <span class="brand__logo">HM</span>
-        <div>
-          <p class="brand__name">Humani Mundial</p>
-          <p class="brand__subtitle">Vinculación</p>
-        </div>
-      </div>
-      <nav class="sidebar__nav">
-        <a href="#" class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
-        <a href="#" class="nav-item"><i data-lucide="users"></i> Prospectos</a>
-        <a href="#" class="nav-item"><i data-lucide="file-text"></i> Convenios FIMPES</a>
-        <a href="#" class="nav-item"><i data-lucide="calendar"></i> Agenda</a>
-      </nav>
-      <div class="sidebar__footer">
-        <p>Coordinación de Calidad</p>
-      </div>
-    </aside>
-
-    <main class="main-content">
-      <header class="top-header">
-        <h1>Tablero de Seguimiento</h1>
-        <div class="topbar__actions">
-          <button class="btn btn--secondary">Nueva interacción</button>
-          <button class="btn btn--primary">Registrar oportunidad</button>
-        </div>
-      </header>
-
-      <section class="stats-grid">
-        <div class="stat-card">
-          <p class="stat-label">Interacciones / Semana</p>
-          <p class="stat-value">26 <span class="trend">+4</span></p>
-        </div>
-        <div class="stat-card">
-          <p class="stat-label">Convenios en Progreso</p>
-          <p class="stat-value">12 <span class="hint">4 para firma</span></p>
-        </div>
-      </section>
-
-      <section class="kanban">
-        <div class="kanban__board" data-kanban>
-          <div class="kanban__column">
-            <div class="kanban__column-header">
-              <h3>Captación</h3>
-              <span class="kanban__count">3</span>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-box">HM</div>
+                <span>Humani Mundial</span>
             </div>
-            <div class="kanban__list" data-list>
-              <article class="kanban__card" draggable="true" data-id="p1">
-                <p class="kanban__title">María Fernanda López</p>
-                <p class="tag-programa">Psicología</p>
-                <p class="kanban__meta"><i data-lucide="user"></i> Andrea</p>
-              </article>
-              </div>
-          </div>
-          
-          <div class="kanban__column">
-            <div class="kanban__column-header">
-              <h3>Contactado</h3>
-              <span class="kanban__count">2</span>
-            </div>
-            <div class="kanban__list" data-list>
-              <article class="kanban__card" draggable="true" data-id="p4">
-                <p class="kanban__title">Carolina Méndez</p>
-                <p class="tag-programa">Enfermería</p>
-                <p class="kanban__meta"><i data-lucide="user"></i> Javier</p>
-              </article>
-            </div>
-          </div>
+            <nav class="menu">
+                <a href="#" class="active"><i data-lucide="layout"></i> Tablero Kanban</a>
+                <a href="#"><i data-lucide="file-check"></i> Convenios FIMPES</a>
+                <a href="#"><i data-lucide="users"></i> Contactos Clave</a>
+                <a href="#"><i data-lucide="calendar"></i> Agenda</a>
+            </nav>
+        </aside>
 
-          </div>
-      </section>
-    </main>
-  </div>
+        <main class="content">
+            <header class="header">
+                <div class="titles">
+                    <h1>Vinculación Humani</h1>
+                    <p>Seguimiento de relaciones estratégicas</p>
+                </div>
+                <div class="actions">
+                    <button class="btn-sec">Nueva Interacción</button>
+                    <button class="btn-pri">Registrar Oportunidad</button>
+                </div>
+            </header>
 
-  <script>
-    lucide.createIcons(); // Inicia los iconos
-    // Aquí conservas tu lógica de Drag & Drop que ya tienes
-  </script>
+            <div class="kanban">
+                <div class="column">
+                    <div class="col-header"><h3>Captación</h3> <span class="count">3</span></div>
+                    <div class="list" id="captacion">
+                        <div class="card" draggable="true">
+                            <strong>María Fernanda López</strong>
+                            <span class="tag">Psicología</span>
+                            <p class="owner">Dueño: Andrea</p>
+                        </div>
+                        <div class="card" draggable="true">
+                            <strong>Luis Enrique Torres</strong>
+                            <span class="tag">Administración</span>
+                            <p class="owner">Dueño: Sofía</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="col-header"><h3>Contactado</h3> <span class="count">2</span></div>
+                    <div class="list" id="contactado">
+                        <div class="card" draggable="true">
+                            <strong>Carolina Méndez</strong>
+                            <span class="tag">Enfermería</span>
+                            <p class="owner">Dueño: Javier</p>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
